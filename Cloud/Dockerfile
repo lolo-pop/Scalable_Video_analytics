@@ -6,10 +6,13 @@ RUN pip install opencv-python \
         jsonpickle \
         flask \
         pyyaml \
-        networkx 
+        networkx \
+        ffmpeg-python \
+        numba \
+        scikit-image
 
 RUN apt install -y --no-install-recommends libgl1-mesa-glx
 
-CMD python /usr/src/app/init_http.py
+CMD python /usr/src/app/init_http.py 5000
 
 COPY . .

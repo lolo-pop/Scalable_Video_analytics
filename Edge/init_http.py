@@ -81,7 +81,8 @@ def analyze_video():
 def create_app():
     file_path = '0000000000.png'
     result = cserver.perform_single_image(file_path, binary_image=False)
-    response = {'message': 'Creating the model instance is completed'}
+    response = {'message': 'Creating the model instance is completed', 
+                'frameid': frameid+15}
     print(response)
     response_pickled = jsonpickle.encode(response)
     return Response(response=response_pickled, status=200, mimetype="application/json")
